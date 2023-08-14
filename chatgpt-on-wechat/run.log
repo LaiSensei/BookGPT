@@ -1,0 +1,51 @@
+[INFO][2023-06-17 23:20:42][config.py:201] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 23:20:42][config.py:151] - [Config] User datas file not found, ignore.
+[INFO][2023-06-17 23:20:43][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 23:20:43][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 23:20:43][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-17 23:20:44][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin GODCMD not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin KEYWORD not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin BANWORDS not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin TOOL not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin ROLE not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin DUNGEON not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin BDUNIT not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin HELLO not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][plugin_manager.py:101] - Plugin FINISH not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 23:20:44][godcmd.py:193] - [Godcmd] 因未设置口令，本次的临时口令为9230。
+[INFO][2023-06-17 23:20:44][godcmd.py:208] - [Godcmd] inited
+[INFO][2023-06-17 23:20:44][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 23:20:44][keyword.py:42] - [keyword] inited.
+[WARNING][2023-06-17 23:20:44][banwords.py:53] - [Banwords] init failed, ignore or see https://github.com/zhayujie/chatgpt-on-wechat/tree/master/plugins/banwords .
+[ERROR][2023-06-17 23:20:44][plugin_manager.py:126] - Failed to init BANWORDS, diabled. [Errno 2] No such file or directory: 'C:\\Users\\RyanEAX\\Desktop\\BookQuery\\chatgpt-on-wechat\\plugins\\banwords\\banwords.txt'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\chatgpt-on-wechat\plugins\plugin_manager.py", line 124, in activate_plugins
+    instance = plugincls()
+  File "C:\Users\RyanEAX\Desktop\BookQuery\chatgpt-on-wechat\plugins\banwords\banwords.py", line 54, in __init__
+    raise e
+  File "C:\Users\RyanEAX\Desktop\BookQuery\chatgpt-on-wechat\plugins\banwords\banwords.py", line 40, in __init__
+    with open(banwords_path, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\RyanEAX\\Desktop\\BookQuery\\chatgpt-on-wechat\\plugins\\banwords\\banwords.txt'
+[INFO][2023-06-17 23:20:49][tool.py:32] - [tool] inited
+[INFO][2023-06-17 23:20:49][role.py:69] - [Role] inited
+[INFO][2023-06-17 23:20:49][dungeon.py:56] - [Dungeon] inited
+[WARNING][2023-06-17 23:20:49][bdunit.py:47] - [BDunit] init failed, ignore 
+[ERROR][2023-06-17 23:20:49][plugin_manager.py:126] - Failed to init BDUNIT, diabled. config.json not found
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\chatgpt-on-wechat\plugins\plugin_manager.py", line 124, in activate_plugins
+    instance = plugincls()
+  File "C:\Users\RyanEAX\Desktop\BookQuery\chatgpt-on-wechat\plugins\bdunit\bdunit.py", line 48, in __init__
+    raise e
+  File "C:\Users\RyanEAX\Desktop\BookQuery\chatgpt-on-wechat\plugins\bdunit\bdunit.py", line 36, in __init__
+    raise Exception("config.json not found")
+Exception: config.json not found
+[INFO][2023-06-17 23:20:49][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 23:20:49][finish.py:23] - [Finish] inited
