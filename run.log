@@ -1,0 +1,640 @@
+[INFO][2023-06-08 18:27:32][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 18:27:32][config.py:145] - [Config] User datas file not found, ignore.
+[INFO][2023-06-08 18:27:33][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 18:27:33][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 18:27:33][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin GODCMD not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin KEYWORD not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin BANWORDS not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin ROLE not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin DUNGEON not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin BDUNIT not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin HELLO not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][plugin_manager.py:101] - Plugin FINISH not found in pconfig, adding to pconfig...
+[INFO][2023-06-08 18:27:33][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为8045。
+[INFO][2023-06-08 18:27:33][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 18:27:33][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 18:27:33][keyword.py:42] - [keyword] inited.
+[WARNING][2023-06-08 18:27:33][banwords.py:53] - [Banwords] init failed, ignore or see https://github.com/zhayujie/chatgpt-on-wechat/tree/master/plugins/banwords .
+[ERROR][2023-06-08 18:27:33][plugin_manager.py:126] - Failed to init BANWORDS, diabled. [Errno 2] No such file or directory: 'C:\\Users\\RyanEAX\\Desktop\\BookQuery\\plugins\\banwords\\banwords.txt'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 124, in activate_plugins
+    instance = plugincls()
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\banwords\banwords.py", line 54, in __init__
+    raise e
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\banwords\banwords.py", line 40, in __init__
+    with open(banwords_path, "r", encoding="utf-8") as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\RyanEAX\\Desktop\\BookQuery\\plugins\\banwords\\banwords.txt'
+[INFO][2023-06-08 18:27:33][role.py:69] - [Role] inited
+[INFO][2023-06-08 18:27:33][dungeon.py:56] - [Dungeon] inited
+[WARNING][2023-06-08 18:27:33][bdunit.py:47] - [BDunit] init failed, ignore 
+[ERROR][2023-06-08 18:27:33][plugin_manager.py:126] - Failed to init BDUNIT, diabled. config.json not found
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 124, in activate_plugins
+    instance = plugincls()
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\bdunit\bdunit.py", line 48, in __init__
+    raise e
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\bdunit\bdunit.py", line 36, in __init__
+    raise Exception("config.json not found")
+Exception: config.json not found
+[INFO][2023-06-08 18:27:33][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 18:27:33][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 18:41:42][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 18:41:42][config.py:145] - [Config] User datas file not found, ignore.
+[INFO][2023-06-08 18:41:42][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 18:41:42][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 18:41:42][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 18:41:42][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 18:41:42][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为2017。
+[INFO][2023-06-08 18:41:42][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 18:41:42][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 18:41:42][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-08 18:41:42][role.py:69] - [Role] inited
+[INFO][2023-06-08 18:41:42][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-08 18:41:42][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 18:41:42][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 18:42:50][BookQuery.py:51] - signal 2 received, exiting...
+[INFO][2023-06-08 18:42:50][config.py:154] - [Config] User datas saved.
+[INFO][2023-06-08 18:43:10][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 18:43:10][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-08 18:43:10][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 18:43:10][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 18:43:10][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 18:43:10][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 18:43:10][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为2857。
+[INFO][2023-06-08 18:43:10][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 18:43:10][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 18:43:10][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-08 18:43:10][role.py:69] - [Role] inited
+[INFO][2023-06-08 18:43:10][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-08 18:43:10][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 18:43:10][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 18:43:47][BookQuery.py:51] - signal 2 received, exiting...
+[INFO][2023-06-08 18:43:47][config.py:154] - [Config] User datas saved.
+[INFO][2023-06-08 18:44:21][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 18:44:21][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-08 18:44:21][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 18:44:21][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 18:44:21][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 18:44:21][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 18:44:21][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为9501。
+[INFO][2023-06-08 18:44:21][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 18:44:21][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 18:44:21][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-08 18:44:21][role.py:69] - [Role] inited
+[INFO][2023-06-08 18:44:21][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-08 18:44:21][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 18:44:21][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 18:47:02][BookQuery.py:51] - signal 2 received, exiting...
+[INFO][2023-06-08 18:47:02][config.py:154] - [Config] User datas saved.
+[INFO][2023-06-08 18:47:06][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 18:47:06][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-08 18:47:06][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 18:47:06][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 18:47:06][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 18:47:06][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 18:47:06][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为0871。
+[INFO][2023-06-08 18:47:06][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 18:47:06][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 18:47:06][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-08 18:47:06][role.py:69] - [Role] inited
+[INFO][2023-06-08 18:47:06][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-08 18:47:06][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 18:47:06][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 18:56:11][BookQuery.py:51] - signal 2 received, exiting...
+[INFO][2023-06-08 18:56:11][config.py:154] - [Config] User datas saved.
+[INFO][2023-06-08 18:56:16][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 18:56:16][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-08 18:56:17][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 18:56:17][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 18:56:17][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 18:56:17][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 18:56:17][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为0872。
+[INFO][2023-06-08 18:56:17][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 18:56:17][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 18:56:17][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-08 18:56:17][role.py:69] - [Role] inited
+[INFO][2023-06-08 18:56:17][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-08 18:56:17][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 18:56:17][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 18:56:33][app.py:17] - signal 2 received, exiting...
+[INFO][2023-06-08 18:56:33][config.py:154] - [Config] User datas saved.
+[INFO][2023-06-08 21:20:54][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-08 21:20:54][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-08 21:20:54][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-08 21:20:54][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-08 21:20:54][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-08 21:20:54][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-08 21:20:54][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为4913。
+[INFO][2023-06-08 21:20:54][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-08 21:20:54][keyword.py:40] - [keyword] {}
+[INFO][2023-06-08 21:20:54][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-08 21:20:54][role.py:69] - [Role] inited
+[INFO][2023-06-08 21:20:54][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-08 21:20:54][hello.py:23] - [Hello] inited
+[INFO][2023-06-08 21:20:54][finish.py:23] - [Finish] inited
+[INFO][2023-06-08 21:31:28][BookQuery.py:51] - signal 2 received, exiting...
+[INFO][2023-06-08 21:31:28][config.py:154] - [Config] User datas saved.
+[INFO][2023-06-11 20:04:18][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-11 20:04:18][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-11 20:04:18][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-11 20:04:18][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-11 20:04:18][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-11 20:04:18][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "C:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-11 20:04:18][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为0271。
+[INFO][2023-06-11 20:04:18][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-11 20:04:18][keyword.py:40] - [keyword] {}
+[INFO][2023-06-11 20:04:18][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-11 20:04:18][role.py:69] - [Role] inited
+[INFO][2023-06-11 20:04:18][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-11 20:04:18][hello.py:23] - [Hello] inited
+[INFO][2023-06-11 20:04:18][finish.py:23] - [Finish] inited
+[INFO][2023-06-17 12:41:21][config.py:195] - [INIT] load config: {'open_ai_api_key': 'YOUR API', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 12:41:21][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-17 12:41:21][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 12:41:21][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 12:41:21][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[ERROR][2023-06-17 12:41:21][plugin_manager.py:91] - Failed to import plugin tool: No module named 'chatgpt_tool_hub'
+Traceback (most recent call last):
+  File "c:\Users\RyanEAX\Desktop\BookQuery\plugins\plugin_manager.py", line 88, in scan_plugins
+    self.loaded[plugin_path] = importlib.import_module(import_path)
+  File "E:\Python\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1030, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1007, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 986, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 680, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "c:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\__init__.py", line 1, in <module>
+    from .tool import *
+  File "c:\Users\RyanEAX\Desktop\BookQuery\plugins\tool\tool.py", line 4, in <module>
+    from chatgpt_tool_hub.apps import AppFactory
+ModuleNotFoundError: No module named 'chatgpt_tool_hub'
+[INFO][2023-06-17 12:41:21][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为5106。
+[INFO][2023-06-17 12:41:21][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-17 12:41:21][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 12:41:21][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-17 12:41:21][role.py:69] - [Role] inited
+[INFO][2023-06-17 12:41:21][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-17 12:41:21][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 12:41:21][finish.py:23] - [Finish] inited
+[INFO][2023-06-17 12:54:10][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 12:54:10][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-17 12:54:11][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 12:54:11][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-17 12:54:11][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-17 12:54:11][plugin_manager.py:101] - Plugin TOOL not found in pconfig, adding to pconfig...
+[INFO][2023-06-17 12:54:11][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为9872。
+[INFO][2023-06-17 12:54:11][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-17 12:54:11][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 12:54:11][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-17 12:54:15][tool.py:32] - [tool] inited
+[INFO][2023-06-17 12:54:15][role.py:69] - [Role] inited
+[INFO][2023-06-17 12:54:15][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-17 12:54:15][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 12:54:15][finish.py:23] - [Finish] inited
+[INFO][2023-06-17 13:17:00][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': False, 'group_speech_recognition': False, 'voice_reply_voice': False, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 13:17:00][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-17 13:17:01][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 13:17:01][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 13:17:01][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-17 13:17:02][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-17 13:17:02][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为1256。
+[INFO][2023-06-17 13:17:02][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-17 13:17:02][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 13:17:02][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-17 13:17:06][tool.py:32] - [tool] inited
+[INFO][2023-06-17 13:17:06][role.py:69] - [Role] inited
+[INFO][2023-06-17 13:17:06][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-17 13:17:06][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 13:17:06][finish.py:23] - [Finish] inited
+[INFO][2023-06-17 23:18:53][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 23:18:53][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-17 23:18:54][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 23:18:54][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-17 23:18:54][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-17 23:18:54][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为8160。
+[INFO][2023-06-17 23:18:54][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-17 23:18:54][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 23:18:54][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-17 23:18:57][tool.py:32] - [tool] inited
+[INFO][2023-06-17 23:18:57][role.py:69] - [Role] inited
+[INFO][2023-06-17 23:18:57][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-17 23:18:57][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 23:18:57][finish.py:23] - [Finish] inited
+[INFO][2023-06-17 23:19:23][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 23:19:23][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-17 23:19:23][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 23:19:23][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 23:19:23][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-17 23:19:24][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-17 23:19:24][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为5203。
+[INFO][2023-06-17 23:19:24][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-17 23:19:24][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 23:19:24][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-17 23:19:27][tool.py:32] - [tool] inited
+[INFO][2023-06-17 23:19:27][role.py:69] - [Role] inited
+[INFO][2023-06-17 23:19:27][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-17 23:19:27][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 23:19:27][finish.py:23] - [Finish] inited
+[INFO][2023-06-17 23:23:14][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['bot', '@bot'], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': ['@bot'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-17 23:23:14][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-17 23:23:14][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-17 23:23:14][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-17 23:23:14][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-17 23:23:14][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为9847。
+[INFO][2023-06-17 23:23:14][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-17 23:23:14][keyword.py:40] - [keyword] {}
+[INFO][2023-06-17 23:23:14][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-17 23:23:18][tool.py:32] - [tool] inited
+[INFO][2023-06-17 23:23:18][role.py:69] - [Role] inited
+[INFO][2023-06-17 23:23:18][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-17 23:23:18][hello.py:23] - [Hello] inited
+[INFO][2023-06-17 23:23:18][finish.py:23] - [Finish] inited
+[INFO][2023-06-18 22:03:33][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': [], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': [], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-18 22:03:33][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-18 22:03:34][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-18 22:03:34][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-18 22:03:34][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-18 22:03:34][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为7856。
+[INFO][2023-06-18 22:03:34][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-18 22:03:34][keyword.py:40] - [keyword] {}
+[INFO][2023-06-18 22:03:34][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-18 22:03:39][tool.py:32] - [tool] inited
+[INFO][2023-06-18 22:03:39][role.py:69] - [Role] inited
+[INFO][2023-06-18 22:03:39][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-18 22:03:39][hello.py:23] - [Hello] inited
+[INFO][2023-06-18 22:03:39][finish.py:23] - [Finish] inited
+[INFO][2023-06-18 22:28:40][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': [], 'single_chat_reply_prefix': '[bot] ', 'group_chat_prefix': [], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是ChatGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是ChatGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-18 22:28:40][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-18 22:28:41][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-18 22:28:41][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-18 22:28:41][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-18 22:28:41][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为0435。
+[INFO][2023-06-18 22:28:41][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-18 22:28:41][keyword.py:40] - [keyword] {}
+[INFO][2023-06-18 22:28:41][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-18 22:28:43][tool.py:32] - [tool] inited
+[INFO][2023-06-18 22:28:43][role.py:69] - [Role] inited
+[INFO][2023-06-18 22:28:43][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-18 22:28:43][hello.py:23] - [Hello] inited
+[INFO][2023-06-18 22:28:43][finish.py:23] - [Finish] inited
+[INFO][2023-06-18 22:32:15][wechat_channel.py:124] - Wechat login success, user_id: @d6e93254f923aa1f9ff13186110881383f707fc7f2845409c3592090ff12d7d6, nickname: 暴风骑士
+[INFO][2023-06-18 22:44:08][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['@Book', 'Book'], 'single_chat_reply_prefix': '[book] ', 'group_chat_prefix': ['@Book', 'Book'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是BookGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是BookGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-18 22:44:08][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-18 22:44:08][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-18 22:44:08][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-18 22:44:08][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-18 22:44:09][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-18 22:44:09][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为8250。
+[INFO][2023-06-18 22:44:09][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-18 22:44:09][keyword.py:40] - [keyword] {}
+[INFO][2023-06-18 22:44:09][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-18 22:44:11][tool.py:32] - [tool] inited
+[INFO][2023-06-18 22:44:11][role.py:69] - [Role] inited
+[INFO][2023-06-18 22:44:11][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-18 22:44:11][hello.py:23] - [Hello] inited
+[INFO][2023-06-18 22:44:11][finish.py:23] - [Finish] inited
+[INFO][2023-06-18 22:44:35][wechat_channel.py:124] - Wechat login success, user_id: @0d956165b580e8b2da7d8e1dcdc9d7e957711f83c4944507842ae379f79d25b1, nickname: 暴风骑士
+[INFO][2023-06-18 23:19:46][config.py:195] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['@Book', 'Book'], 'single_chat_reply_prefix': '[book] ', 'group_chat_prefix': ['@Book', 'Book'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是BookGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是BookGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-06-18 23:19:46][config.py:143] - [Config] User datas loaded.
+[INFO][2023-06-18 23:19:46][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-06-18 23:19:46][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-06-18 23:19:46][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-06-18 23:19:47][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-06-18 23:19:47][godcmd.py:181] - [Godcmd] 因未设置口令，本次的临时口令为5042。
+[INFO][2023-06-18 23:19:47][godcmd.py:196] - [Godcmd] inited
+[INFO][2023-06-18 23:19:47][keyword.py:40] - [keyword] {}
+[INFO][2023-06-18 23:19:47][keyword.py:42] - [keyword] inited.
+[INFO][2023-06-18 23:19:50][tool.py:32] - [tool] inited
+[INFO][2023-06-18 23:19:50][role.py:69] - [Role] inited
+[INFO][2023-06-18 23:19:50][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-06-18 23:19:50][hello.py:23] - [Hello] inited
+[INFO][2023-06-18 23:19:50][finish.py:23] - [Finish] inited
+[INFO][2023-07-23 11:10:59][config.py:201] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['@Book', 'Book'], 'single_chat_reply_prefix': '[book] ', 'group_chat_prefix': ['@Book', 'Book'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是BookGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是BookGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-07-23 11:10:59][config.py:151] - [Config] User datas file not found, ignore.
+[WARNING][2023-07-23 11:11:00][audio_convert.py:9] - import pysilk failed, wechaty voice message will not be supported.
+[ERROR][2023-07-23 11:11:00][app.py:52] - App startup failed!
+[ERROR][2023-07-23 11:11:00][app.py:53] - No module named 'pyqrcode'
+Traceback (most recent call last):
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\app.py", line 45, in run
+    channel = channel_factory.create_channel(channel_name)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\channel\channel_factory.py", line 13, in create_channel
+    from channel.wechat.wechat_channel import WechatChannel
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\channel\wechat\wechat_channel.py", line 18, in <module>
+    from channel.wechat.wechat_message import *
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\channel\wechat\wechat_message.py", line 7, in <module>
+    from lib import itchat
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\lib\itchat\__init__.py", line 8, in <module>
+    from .components import load_components
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\lib\itchat\components\__init__.py", line 3, in <module>
+    from .login import load_login
+  File "c:\Users\Ryan\Desktop\BookQuery\chatgpt-on-wechat\lib\itchat\components\login.py", line 17, in <module>
+    from pyqrcode import QRCode
+ModuleNotFoundError: No module named 'pyqrcode'
+[INFO][2023-07-23 11:19:30][config.py:201] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['@Book', 'Book'], 'single_chat_reply_prefix': '[book] ', 'group_chat_prefix': ['@Book', 'Book'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是BookGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是BookGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-07-23 11:19:30][config.py:151] - [Config] User datas file not found, ignore.
+[INFO][2023-07-23 11:19:30][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-07-23 11:19:30][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-07-23 11:19:30][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-07-23 11:19:30][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-07-23 11:19:30][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-07-23 11:19:30][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-07-23 11:19:30][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-07-23 11:19:31][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-07-23 11:19:31][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-07-23 11:19:31][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-07-23 11:19:32][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-07-23 11:19:32][godcmd.py:193] - [Godcmd] 因未设置口令，本次的临时口令为9108。
+[INFO][2023-07-23 11:19:32][godcmd.py:208] - [Godcmd] inited
+[INFO][2023-07-23 11:19:32][keyword.py:40] - [keyword] {}
+[INFO][2023-07-23 11:19:32][keyword.py:42] - [keyword] inited.
+[INFO][2023-07-23 11:19:33][tool.py:32] - [tool] inited
+[INFO][2023-07-23 11:19:33][role.py:69] - [Role] inited
+[INFO][2023-07-23 11:19:33][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-07-23 11:19:34][hello.py:23] - [Hello] inited
+[INFO][2023-07-23 11:19:34][finish.py:23] - [Finish] inited
+[INFO][2023-07-23 14:48:20][config.py:201] - [INIT] load config: {'open_ai_api_key': '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', 'model': 'gpt-3.5-turbo', 'proxy': '', 'single_chat_prefix': ['@Book', 'Book'], 'single_chat_reply_prefix': '[book] ', 'group_chat_prefix': ['@Book', 'Book'], 'group_name_white_list': ['BookGPT测试群', 'BookGPT测试群2'], 'group_chat_in_one_session': ['BookGPT测试群'], 'image_create_prefix': ['画', '看', '找'], 'speech_recognition': True, 'group_speech_recognition': True, 'voice_reply_voice': True, 'conversation_max_tokens': 1000, 'expires_in_seconds': 3600, 'character_desc': '你是BookGPT, 一个由OpenAI训练的大型语言模型, 你旨在回答并解决人们的任何问题，并且可以使用多种语言与人交流。', 'subscribe_msg': '感谢您的关注！\n这里是BookGPT，可以自由对话。\n支持语音对话。\n支持图片输入。\n支持图片输出，画字开头的消息将按要求创作图片。\n支持tool、角色扮演和文字冒险等丰富的插件。\n输入{trigger_prefix}#help 查看详细指令。'}
+[INFO][2023-07-23 14:48:20][config.py:151] - [Config] User datas file not found, ignore.
+[INFO][2023-07-23 14:48:21][plugin_manager.py:50] - Loading plugins config...
+[INFO][2023-07-23 14:48:21][plugin_manager.py:66] - Scaning plugins ...
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Banwords_v1.0 registered, path=./plugins\banwords
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin BDunit_v0.1 registered, path=./plugins\bdunit
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Dungeon_v1.0 registered, path=./plugins\dungeon
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Finish_v1.0 registered, path=./plugins\finish
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Godcmd_v1.0 registered, path=./plugins\godcmd
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Hello_v0.1 registered, path=./plugins\hello
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Keyword_v0.1 registered, path=./plugins\keyword
+[INFO][2023-07-23 14:48:21][plugin_manager.py:41] - Plugin Role_v1.0 registered, path=./plugins\role
+[INFO][2023-07-23 14:48:23][plugin_manager.py:41] - Plugin tool_v0.4 registered, path=./plugins\tool
+[INFO][2023-07-23 14:48:23][godcmd.py:193] - [Godcmd] 因未设置口令，本次的临时口令为9570。
+[INFO][2023-07-23 14:48:23][godcmd.py:208] - [Godcmd] inited
+[INFO][2023-07-23 14:48:23][keyword.py:40] - [keyword] {}
+[INFO][2023-07-23 14:48:23][keyword.py:42] - [keyword] inited.
+[INFO][2023-07-23 14:48:23][tool.py:32] - [tool] inited
+[INFO][2023-07-23 14:48:23][role.py:69] - [Role] inited
+[INFO][2023-07-23 14:48:23][dungeon.py:56] - [Dungeon] inited
+[INFO][2023-07-23 14:48:23][hello.py:23] - [Hello] inited
+[INFO][2023-07-23 14:48:23][finish.py:23] - [Finish] inited
